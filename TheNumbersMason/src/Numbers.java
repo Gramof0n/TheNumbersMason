@@ -38,9 +38,12 @@ public class Numbers extends Thread {
 			l = new JLabel();
 			l.setBounds(x, y , 10, 10);
 			l.setFont(new Font("Tahoma", Font.PLAIN, 10));
-			l.setForeground(Color.GREEN);
-			l.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+			l.setForeground(new Color(r.nextInt(255), r.nextInt(255), r.nextInt(255)));
+			//l.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+			
 			labels[i] = l;
+			labels[i].setText(numbers[r.nextInt(10)]);
+			
 			try {
 				sleep(10);
 			} catch (InterruptedException e) {
@@ -49,14 +52,8 @@ public class Numbers extends Thread {
 			}
 			panel.add(l);
 			panel.repaint();
-			
 		}
 		
-		
-		for (int i = 0; i < labels.length; i++) {
-			l.setText(numbers[r.nextInt(10)]);
-			panel.repaint();
-		}
 		
 		
 		System.out.println(x);
